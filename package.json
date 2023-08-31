@@ -20,6 +20,10 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.3",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "zustand": "^4.4.1"
+  },
+  "devDependencies": {
+    "ts-standard": "^12.0.2"
   }
 }
