@@ -10,14 +10,14 @@ type Active = {
 export const NavbarHomepage: React.FC<Active> = ({ active: string }) => {
 /*   const classborder =
     'relative before:w-full before:h-1 before:rounded before:bg-blue-regular before:absolute before:-bottom-1' */
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
   const handleNav = (): void => {
     setOpen(!open)
   }
 
   return (
-    <nav className='sm:items-center sm:justify-between  text-end sm:flex-wrap font-primary '>
-      <div className='flex w-full items-start flex-grow md:flex md:items-center md:w-auto  text-purple-dark '>
+    <nav className='sm:items-center text-end sm:flex-wrap font-primary flex justify-center  w-full'>
+      <div className='flex justify-center items-start flex-grow md:flex md:items-center  text-purple-dark max-w-[1450px] w-full '>
         <div className='pt-4 ml-8 mb-2'>
           <Link href='/'>
             <LogoNavbar />
@@ -81,29 +81,29 @@ export const NavbarHomepage: React.FC<Active> = ({ active: string }) => {
             <IconDarkMode />
           </Link>
         </ul>
-        <div className={!open ? 'mt-16 mr-1 vy-sm:mr-10 fixed right-0 top-0 w-[30%] ease-in-out duration-500 rounded sm:hidden bg-[#E8E1FF] border-purple-dark border-2' : 'fixed left-[-100%]'}>
+        <div className={!open ? 'mt-16 mr-1 px-2 vy-sm:mr-10 fixed right-8 top-0 w-[30%] ease-in-out duration-500 rounded sm:hidden bg-[#E8E1FF] border-purple-dark border-2' : 'fixed left-[-100%]'}>
 
           <div>
-            <ul className='grid justify-items-start pt-3 '>
-              <li className='text-sm vy-sm:text-base vy-sm:p-1 hover:text-purple-regular vy-sm:font-bold'>
+            <ul className='justify-items-start pt-3 flex flex-col gap-4'>
+              <li className='text-sm text-center vy-sm:text-base vy-sm:p-1 hover:text-purple-regular vy-sm:font-bold'>
                 <Link href='/'>
                   Home
                 </Link>
               </li>
 
-              <li className='text-sm vy-sm:text-base vy-sm:p-1 hover:text-purple-regular vy-sm:font-bold'>
+              <li className='w-full text-center text-sm vy-sm:text-base vy-sm:p-1 hover:text-purple-regular vy-sm:font-bold'>
                 <Link href='/howitwork'>
                   How it Work
                 </Link>
               </li>
-              <li className='text-sm vy-sm:text-base vy-sm:p-1 hover:text-purple-regular vy-sm:font-bold'>
+              <li className='text-sm text-center vy-sm:text-base vy-sm:p-1 hover:text-purple-regular vy-sm:font-bold'>
                 <Link
                   href='/about'
                 >
                   About
                 </Link>
               </li>
-              <li className='text-sm vy-sm:text-base  vy-sm:p-1 hover:text-purple-regular vy-sm:font-bold'>
+              <li className='text-sm text-center vy-sm:text-base  vy-sm:p-1 hover:text-purple-regular vy-sm:font-bold'>
                 <Link href='/contact'>
                   Contact
                 </Link>

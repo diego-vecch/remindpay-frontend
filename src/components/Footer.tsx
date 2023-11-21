@@ -4,33 +4,36 @@ import Image from 'next/image'
 
 export const Footer: React.FC = () => {
   return (
-    <div className='bg-purple-regular'>
-      <footer className='flex items-center justify-between text-end flex-wrap pt-2 lg:flex lg:items-center lg:w-auhref font-semibold'>
-        <div className='w-full block flex-grow lg:flex lg:items-center lg:w-auto '>
-          <div className='text-sm lg:flex-grow grid grid-cols-4 gap-4'>
-            <div className='text-purple-light flex justify-start ml-8 items-center'>
+    <footer className='flex w-full bg-purple-regular  justify-center '>
+      <div className=' w-full max-w-[1450px] flex flex-col items-center justify-between text-end flex-wrap pt-2 lg:items-center lg:w-auhref font-semibold '>
+        <div className='w-full pt-4 block flex-grow lg:flex gap-10 lg:items-center'>
+          <div className='text-sm lg:flex-grow flex justify-center flex-col md:flex-row gap-14 lg:gap-24'>
+            <section className='text-purple-light flex justify-center items-center'>
               <Link href='/'>
                 <Image className='w-20 h-16' width={20} height={20} src='Logo-Full-Dark.svg' alt='Logo Git Hub' />
               </Link>
-            </div>
-            <div>
-              <h1 className='text-blue-regular font-bold mr-4 text-center pb-4'>Links</h1>
-              <div className='flex justify-around text-purple-light'>
-                <Link href='/HowItWork' className='block mt-4 lg:inline-block lg:mt-0 hover:underline mr-4'>
+            </section>
+            <section>
+              <h1 className='text-blue-regular font-bold mr-2 text-center pb-4'>Links</h1>
+              <div className='flex justify-around flex-col md:flex-row text-purple-light'>
+                <Link href='/HowItWork' className='block mt-4 lg:inline-block lg:mt-0 hover:underline mr-2 text-center'>
                   How it work
                 </Link>
-                <Link href='/About' className='block mt-4 lg:inline-block lg:mt-0 hover:underline mr-4'>
+                <Link href='/About' className='block mt-4 lg:inline-block lg:mt-0 hover:underline mr-2 text-center'>
                   About
                 </Link>
-                <Link href='/Contact' className='block mt-4 lg:inline-block lg:mt-0 hover:underline mr-4'>
+                <Link href='/Contact' className='block mt-4 lg:inline-block lg:mt-0 hover:underline mr-2 text-center'>
                   Contact
                 </Link>
               </div>
-            </div>
-            <div>
+            </section>
+            <section className=''>
               <h1 className='text-blue-regular font-bold text-center mr-4'>Technologies</h1>
-              <div className='flex justify-around'>
-                <a href='https://reactjs.org/' target='_black' className='block mt-4 lg:inline-block lg:mt-0 text-white hover:underline mr-4 sm:text-center'>
+              <div className='flex justify-around flex-col md:flex-row w-full pt-4 [&>a]:flex [&>a]:justify-center '>
+                <a
+                  href='https://reactjs.org/' target='_black'
+                  className=' sm:block mt-4 lg:inline-block lg:mt-0 text-white hover:underline mr-4 sm:text-center'
+                >
                   <svg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'>
                     <path d='M25 27.146C27.0538 27.146 28.7188 25.4811 28.7188 23.4272C28.7188 21.3734 27.0538 19.7085 25 19.7085C22.9462 19.7085 21.2812 21.3734 21.2812 23.4272C21.2812 25.4811 22.9462 27.146 25 27.146Z' fill='#E5D1FF' />
                     <path d='M14.5872 30.8208L13.7643 30.6104C7.65176 29.0666 4.14551 26.4416 4.14551 23.4187C4.14551 20.3937 7.65384 17.7708 13.7643 16.227L14.5872 16.0187L14.8184 16.8333C15.4362 18.966 16.2278 21.0445 17.1851 23.0479L17.3622 23.4187L17.1851 23.7895C16.2268 25.7958 15.433 27.8749 14.8184 30.0083L14.5872 30.8208ZM13.3851 18.1229C8.74134 19.4312 5.88926 21.427 5.88926 23.4187C5.88926 25.4062 8.73926 27.4041 13.3851 28.7104C13.9538 26.902 14.6413 25.1333 15.4372 23.4187C14.6356 21.7012 13.95 19.932 13.3851 18.1229ZM35.4101 30.8208L35.1809 30.0041C34.5615 27.871 33.7693 25.7919 32.8122 23.7874L32.6351 23.4187L32.8122 23.0458C33.7705 21.0437 34.5601 18.9624 35.1809 16.8291L35.4101 16.0166L36.233 16.2249C42.3476 17.7687 45.8518 20.3916 45.8518 23.4187C45.8518 26.4437 42.3455 29.0666 36.233 30.6104L35.4101 30.8208ZM34.5559 23.4187C35.3893 25.2229 36.083 26.9979 36.6122 28.7104C41.258 27.4041 44.1101 25.4062 44.1101 23.4187C44.1101 21.427 41.2601 19.4333 36.6122 18.1229C36.044 19.9314 35.3571 21.7006 34.5559 23.4187Z' fill='#E5D1FF' />
@@ -51,28 +54,25 @@ export const Footer: React.FC = () => {
                   </svg>
                 </a>
               </div>
-            </div>
-            <div>
+            </section>
+            <section className=''>
               <h1 className='text-blue-regular font-bold mr-4 text-center'>
                 Repository
               </h1>
               <div className='flex justify-center'>
                 <a href='https://github.com/marcelowebdesigner/G4-Frontend.git' target='_black' className='block mt-4 lg:inline-block lg:mt-0 text-white hover:underline mr-4'>
                   <svg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                    <path fill-rule='evenodd' clip-rule='evenodd' d='M25.0546 4.1665C13.5775 4.1665 4.27539 13.4686 4.27539 24.9457C4.27539 34.1248 10.2275 41.9144 18.4858 44.6644C19.5254 44.8519 19.9004 44.2123 19.9004 43.6623C19.9004 43.1686 19.8837 41.8603 19.8775 40.129C14.0962 41.3832 12.8754 37.3415 12.8754 37.3415C11.9337 34.9415 10.5691 34.3019 10.5691 34.3019C8.68372 33.0123 10.7129 33.0415 10.7129 33.0415C12.8004 33.1873 13.8941 35.1832 13.8941 35.1832C15.7483 38.3582 18.7608 37.4415 19.94 36.9103C20.1296 35.5665 20.6712 34.6498 21.2629 34.1311C16.6504 33.6082 11.8004 31.8248 11.8004 23.8603C11.8004 21.5957 12.6108 19.7373 13.9337 18.2873C13.7233 17.7603 13.0046 15.6457 14.14 12.7873C14.14 12.7873 15.8837 12.2269 19.8525 14.9144C21.5475 14.4533 23.2959 14.218 25.0525 14.2144C26.8091 14.2173 28.5576 14.4526 30.2525 14.9144C34.2233 12.2248 35.965 12.7873 35.965 12.7873C37.1004 15.6457 36.3879 17.7603 36.1712 18.2873C37.5046 19.7373 38.3046 21.5936 38.3046 23.8603C38.3046 31.8457 33.4504 33.5998 28.8212 34.1144C29.5608 34.7561 30.2275 36.0228 30.2275 37.9603C30.2275 40.7394 30.2025 42.9811 30.2025 43.6623C30.2025 44.2186 30.5733 44.8644 31.6337 44.6603C39.8879 41.9061 45.8337 34.1228 45.8337 24.9457C45.8337 13.4686 36.5316 4.1665 25.0546 4.1665Z' fill='#E5D1FF' />
+                    <path fillRule='evenodd' clipRule='evenodd' d='M25.0546 4.1665C13.5775 4.1665 4.27539 13.4686 4.27539 24.9457C4.27539 34.1248 10.2275 41.9144 18.4858 44.6644C19.5254 44.8519 19.9004 44.2123 19.9004 43.6623C19.9004 43.1686 19.8837 41.8603 19.8775 40.129C14.0962 41.3832 12.8754 37.3415 12.8754 37.3415C11.9337 34.9415 10.5691 34.3019 10.5691 34.3019C8.68372 33.0123 10.7129 33.0415 10.7129 33.0415C12.8004 33.1873 13.8941 35.1832 13.8941 35.1832C15.7483 38.3582 18.7608 37.4415 19.94 36.9103C20.1296 35.5665 20.6712 34.6498 21.2629 34.1311C16.6504 33.6082 11.8004 31.8248 11.8004 23.8603C11.8004 21.5957 12.6108 19.7373 13.9337 18.2873C13.7233 17.7603 13.0046 15.6457 14.14 12.7873C14.14 12.7873 15.8837 12.2269 19.8525 14.9144C21.5475 14.4533 23.2959 14.218 25.0525 14.2144C26.8091 14.2173 28.5576 14.4526 30.2525 14.9144C34.2233 12.2248 35.965 12.7873 35.965 12.7873C37.1004 15.6457 36.3879 17.7603 36.1712 18.2873C37.5046 19.7373 38.3046 21.5936 38.3046 23.8603C38.3046 31.8457 33.4504 33.5998 28.8212 34.1144C29.5608 34.7561 30.2275 36.0228 30.2275 37.9603C30.2275 40.7394 30.2025 42.9811 30.2025 43.6623C30.2025 44.2186 30.5733 44.8644 31.6337 44.6603C39.8879 41.9061 45.8337 34.1228 45.8337 24.9457C45.8337 13.4686 36.5316 4.1665 25.0546 4.1665Z' fill='#E5D1FF' />
                   </svg>
                 </a>
               </div>
-            </div>
-
+            </section>
           </div>
-
         </div>
-
-      </footer>
-      <div className='flex justify-center text-sm pb-2'>
-        <h1 className='text-white'>© 2022 Remind Pay. All rights reserved.</h1>
+        <div className='flex justify-center text-sm pt-6 pb-4'>
+          <h1 className='text-white'>© 2022 Remind Pay. All rights reserved.</h1>
+        </div>
       </div>
-    </div>
+    </footer>
   )
 }
