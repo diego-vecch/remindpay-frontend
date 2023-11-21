@@ -23,7 +23,7 @@ const config: Config = {
         'blue-regular': '#440298'
       },
       screens: {
-        'vy-sm': '360px'
+        sm: '520px'
       }
     }
   },
