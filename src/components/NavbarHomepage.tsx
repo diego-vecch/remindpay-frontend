@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { NavbarContext } from '@/context/NavbarContext'
 import Link from 'next/link'
 import ButtonMenu from './ButtonMenu'
 import { IconHamburguerMenu, LogoNavbar, IconDarkMode } from './IconsSvg'
@@ -8,17 +9,31 @@ type Active = {
 }
 
 export const NavbarHomepage: React.FC<Active> = ({ active: string }) => {
-/*   const classborder =
+  const { position, setPosition } = useContext(NavbarContext)
+  /*   const classborder =
     'relative before:w-full before:h-1 before:rounded before:bg-blue-regular before:absolute before:-bottom-1' */
+  const LinkSelected = 'border-b-2 border-blue-regular'
+  const LinkNoSelected = ''
   const [open, setOpen] = useState(true)
   const handleNav = (): void => {
     setOpen(!open)
   }
-
+  const selectHome = (): void => {
+    setPosition({
+      home: LinkSelected,
+      how: LinkNoSelected
+    })
+  }
+  const selectHowItWork = (): void => {
+    setPosition({
+      home: LinkNoSelected,
+      how: LinkSelected
+    })
+  }
   return (
     <nav className='sm:items-center text-end sm:flex-wrap font-primary flex justify-center  w-full'>
       <div className='flex justify-center items-start flex-grow md:flex md:items-center  text-purple-dark max-w-[1450px] w-full '>
-        <div className='pt-4 ml-8 mb-2'>
+        <div className='pt-4 ml-8 mb-2 w-full'>
           <Link href='/'>
             <LogoNavbar />
           </Link>
@@ -31,13 +46,15 @@ export const NavbarHomepage: React.FC<Active> = ({ active: string }) => {
           <IconHamburguerMenu /* name={open ? 'close' : 'menu'} */ />
         </div>
 
-        <ul
-          className={`flex-auto text-sm sm:flex-grow self-start hidden sm:flex justify-end pr-6 pt-6 gap-14 md:gap-6 sm:gap-4 items-center lg:text-xl ease-in ${
+        <div
+          className={`flex-auto text-sm sm:flex-grow self-start hidden sm:flex justify-center px-6 pt-7 gap-14 md:gap-6 sm:gap-4 items-center lg:text-xl ease-in ${
             open ? 'top-20' : 'top-[-490px]'
           }`}
         >
           <Link
             href='/'
+            onClick={selectHome}
+            className={`${position.home}`}
             /* className={`lg:inline-block lg:mt-0 font-bold ${
               active == 'home' ? classborder : ''
             }`} */
@@ -45,7 +62,9 @@ export const NavbarHomepage: React.FC<Active> = ({ active: string }) => {
             Home
           </Link>
           <Link
+            onClick={selectHowItWork}
             href='/howitwork'
+            className={`w-16 sm:w-24 lg:w-32 text-center ${position.how}`}
             /* className={`lg:inline-block lg:mt-0 font-bold ${
               active === 'how' ? classborder : ''
             }`} */
@@ -54,6 +73,7 @@ export const NavbarHomepage: React.FC<Active> = ({ active: string }) => {
           </Link>
           <Link
             href='/about'
+            className='text-center'
             /* className={`lg:inline-block lg:mt-0 font-bold ${
               active === 'about' ? classborder : ''
             }`} */
@@ -69,6 +89,13 @@ export const NavbarHomepage: React.FC<Active> = ({ active: string }) => {
             Contact
           </Link>
 
+        </div>
+        <div
+          className={`w-full flex-auto text-sm sm:flex-grow self-start hidden sm:flex justify-end px-2 pt-6 gap-10 md:gap-5 sm:gap-3 items-center lg:text-xl ease-in ${
+            open ? 'top-20' : 'top-[-490px]'
+          }`}
+        >
+
           <Link href='/Signin'>
             <ButtonMenu name='Signin' />
           </Link>
@@ -80,7 +107,7 @@ export const NavbarHomepage: React.FC<Active> = ({ active: string }) => {
           <Link href='/'>
             <IconDarkMode />
           </Link>
-        </ul>
+        </div>
         <div className={!open ? 'mt-16 mr-1 px-2 vy-sm:mr-10 fixed right-8 top-0 w-[30%] ease-in-out duration-500 rounded sm:hidden bg-[#E8E1FF] border-purple-dark border-2' : 'fixed left-[-100%]'}>
 
           <div>
