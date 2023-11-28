@@ -13,7 +13,7 @@ export default function page(): JSX.Element {
           <div className="flex">
             <div className="flex w-96 ml-24">
               <img
-                src="https://res.cloudinary.com/dvlpzbeub/image/upload/v1701118200/Remind%20Pay/image_13_viemro.svg"
+                src="https://res.cloudinary.com/dvlpzbeub/image/upload/v1701174529/Remind%20Pay/image_13_l3xupo.webp"
                 alt=""
               />
             </div>
