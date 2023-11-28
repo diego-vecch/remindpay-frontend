@@ -21,13 +21,24 @@ export const NavbarHomepage: React.FC<Active> = ({ active: string }) => {
   const selectHome = (): void => {
     setPosition({
       home: LinkSelected,
-      how: LinkNoSelected
+      how: LinkNoSelected,
+      about: LinkNoSelected
     })
   }
   const selectHowItWork = (): void => {
     setPosition({
       home: LinkNoSelected,
-      how: LinkSelected
+      how: LinkSelected,
+      about: LinkNoSelected
+    })
+  }
+
+  const selectAbout = (): void => {
+    setPosition({
+      home: LinkNoSelected,
+      how: LinkNoSelected,
+      about: LinkSelected
+      
     })
   }
   return (
@@ -72,8 +83,9 @@ export const NavbarHomepage: React.FC<Active> = ({ active: string }) => {
             How it Work
           </Link>
           <Link
+          onClick={selectAbout}
             href='/about'
-            className='text-center'
+            className={`${position.about}`}
             /* className={`lg:inline-block lg:mt-0 font-bold ${
               active === 'about' ? classborder : ''
             }`} */
