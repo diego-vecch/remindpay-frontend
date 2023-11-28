@@ -38,7 +38,6 @@ export const NavbarHomepage: React.FC<Active> = ({ active: string }) => {
       home: LinkNoSelected,
       how: LinkNoSelected,
       about: LinkSelected
-      
     })
   }
   return (
@@ -83,7 +82,7 @@ export const NavbarHomepage: React.FC<Active> = ({ active: string }) => {
             How it Work
           </Link>
           <Link
-          onClick={selectAbout}
+            onClick={selectAbout}
             href='/about'
             className={`${position.about}`}
             /* className={`lg:inline-block lg:mt-0 font-bold ${
