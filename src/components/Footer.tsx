@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export const Footer: React.FC = () => {
   return (
-    <footer className='flex w-full bg-purple-regular  justify-center '>
+    <footer className='flex w-full bg-purple-regular  justify-center'>
       <div className=' w-full max-w-[1450px] flex flex-col items-center justify-between text-end flex-wrap pt-2 lg:items-center lg:w-auhref font-semibold '>
         <div className='w-full pt-4 block flex-grow lg:flex gap-10 lg:items-center'>
           <div className='text-sm lg:flex-grow flex justify-center flex-col md:flex-row gap-14 lg:gap-24'>

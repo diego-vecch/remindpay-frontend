@@ -1,47 +1,57 @@
 'use client'
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { NavbarContext } from '@/context/NavbarContext'
 import Link from 'next/link'
 import ButtonMenu from './ButtonMenu'
 import { IconHamburguerMenu, LogoNavbar, IconDarkMode } from './IconsSvg'
-type Active = {
-  active: string
-}
 
-export const NavbarHomepage: React.FC<Active> = ({ active: string }) => {
+export const NavbarHomepage: React.FC = () => {
   const { position, setPosition } = useContext(NavbarContext)
-  /*   const classborder =
-    'relative before:w-full before:h-1 before:rounded before:bg-blue-regular before:absolute before:-bottom-1' */
-  const LinkSelected = 'border-b-2 border-blue-regular'
-  const LinkNoSelected = ''
+  useEffect(() => {
+    const params = document.location.pathname
+    const LinkSelected = 'border-b-2 border-blue-regular'
+    const LinkNoSelected = ''
+
+    if (params === '/') {
+      setPosition({
+        home: LinkSelected,
+        how: LinkNoSelected,
+        about: LinkNoSelected,
+        contact: LinkNoSelected
+      })
+    }
+    if (params === '/howitwork') {
+      setPosition({
+        home: LinkNoSelected,
+        how: LinkSelected,
+        about: LinkNoSelected,
+        contact: LinkNoSelected
+      })
+    }
+    if (params === '/about') {
+      setPosition({
+        home: LinkNoSelected,
+        how: LinkNoSelected,
+        about: LinkSelected,
+        contact: LinkNoSelected
+      })
+    }
+    if (params === '/contact') {
+      setPosition({
+        home: LinkNoSelected,
+        how: LinkNoSelected,
+        about: LinkNoSelected,
+        contact: LinkSelected
+      })
+    }
+  }, [setPosition])
   const [open, setOpen] = useState(true)
   const handleNav = (): void => {
     setOpen(!open)
   }
-  const selectHome = (): void => {
-    setPosition({
-      home: LinkSelected,
-      how: LinkNoSelected,
-      about: LinkNoSelected
-    })
-  }
-  const selectHowItWork = (): void => {
-    setPosition({
-      home: LinkNoSelected,
-      how: LinkSelected,
-      about: LinkNoSelected
-    })
-  }
 
-  const selectAbout = (): void => {
-    setPosition({
-      home: LinkNoSelected,
-      how: LinkNoSelected,
-      about: LinkSelected
-    })
-  }
   return (
-    <nav className='sm:items-center text-end sm:flex-wrap font-primary flex justify-center  w-full'>
+    <nav className='sm:items-center text-end sm:flex-wrap font-primary flex justify-center  w-full max-w-[1100px] absolute top-0 m-auto z-10 right-0 left-0'>
       <div className='flex justify-center items-start flex-grow md:flex md:items-center  text-purple-dark max-w-[1450px] w-full '>
         <div className='pt-4 ml-8 mb-2 w-full'>
           <Link href='/'>
@@ -63,7 +73,6 @@ export const NavbarHomepage: React.FC<Active> = ({ active: string }) => {
         >
           <Link
             href='/'
-            onClick={selectHome}
             className={`${position.home}`}
             /* className={`lg:inline-block lg:mt-0 font-bold ${
               active == 'home' ? classborder : ''
@@ -72,7 +81,6 @@ export const NavbarHomepage: React.FC<Active> = ({ active: string }) => {
             Home
           </Link>
           <Link
-            onClick={selectHowItWork}
             href='/howitwork'
             className={`w-16 sm:w-24 lg:w-32 text-center ${position.how}`}
             /* className={`lg:inline-block lg:mt-0 font-bold ${
@@ -82,7 +90,6 @@ export const NavbarHomepage: React.FC<Active> = ({ active: string }) => {
             How it Work
           </Link>
           <Link
-            onClick={selectAbout}
             href='/about'
             className={`${position.about}`}
             /* className={`lg:inline-block lg:mt-0 font-bold ${
@@ -93,9 +100,7 @@ export const NavbarHomepage: React.FC<Active> = ({ active: string }) => {
           </Link>
           <Link
             href='/contact'
-            /* className={`lg:inline-block lg:mt-0 font-bold ${
-              active === 'contact' ? classborder : ''
-            }`} */
+            className={`${position.contact}`}
           >
             Contact
           </Link>

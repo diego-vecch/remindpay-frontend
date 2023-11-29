@@ -16,3 +16,15 @@ main {
   background-image: url("../../public/bglightfull.webp");
   background-size: 100%;
 }
+
+html::-webkit-scrollbar {
+  width: 8px;
+  height: 1em;
+  background-color: #ceb4f4;
+}
+
+html::-webkit-scrollbar-thumb {
+  width: 2px;
+  height: 2em;
+  background-color: #6844cc;
+}
