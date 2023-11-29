@@ -5,6 +5,7 @@ type PositionObject = {
   home: string
   how: string
   about: string
+  contact: string
 }
 
 export const NavbarContext = createContext<{
@@ -12,18 +13,20 @@ export const NavbarContext = createContext<{
   setPosition: React.Dispatch<SetStateAction<PositionObject>>
 }>({
   position: {
-    home: 'border-b-2 border-blue-regular',
+    home: '',
     how: '',
-    about: ''
+    about: '',
+    contact: ''
   },
   setPosition: (): void => {}
 })
 
 export function Routing ({ children }: { children: React.ReactNode }): JSX.Element {
   const [position, setPosition] = useState({
-    home: 'border-b-2 border-blue-regular',
+    home: '',
     how: '',
-    about: ''
+    about: '',
+    contact: ''
   })
   return (
     <NavbarContext.Provider value={{ position, setPosition }}>

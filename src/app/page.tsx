@@ -7,7 +7,7 @@ import { Footer } from '@/components/Footer'
 export default function Home (): JSX.Element {
   return (
     <main className=' h-full flex flex-col justify-center w-full'>
-      <NavbarHomepage active='home' />
+      <NavbarHomepage />
       <Header />
       <Description />
       <SectionCards />
