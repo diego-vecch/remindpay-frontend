@@ -25,10 +25,9 @@ const Login: React.FC = () => {
           </div>
           <button type='submit' className='bg-purple-700 text-white p-2 w-full rounded-md mb-2'>Log in</button>
           <button type='submit' className='bg-transparent text-purple-700 p-2 w-full rounded-md'>Forgot your password?</button>
-           
-         </form>
-        </div>
-        </div>
+        </form>
+      </div>
+    </div>
   )
 }
 
