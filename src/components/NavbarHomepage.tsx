@@ -116,7 +116,7 @@ export const NavbarHomepage: React.FC = () => {
             <ButtonMenu name='Signin' />
           </Link>
 
-          <Link href='/Login'>
+          <Link href='/login'>
             <ButtonMenu name='Login' />
           </Link>
 
@@ -158,7 +158,7 @@ export const NavbarHomepage: React.FC = () => {
                 </Link>
               </li>
               <li className='p-1'>
-                <Link href='/Login'>
+                <Link href='/login'>
                   <ButtonMenu name='Login' />
                 </Link>
               </li>
