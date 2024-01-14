@@ -1,9 +1,11 @@
+import FormContact from '@/components/FormContact'
 import { NavbarHomepage } from '@/components/NavbarHomepage'
+
 export default function page (): JSX.Element {
   return (
-    <main className='h-full flex flex-col justify-center w-full'>
+    <main className='h-screen flex flex-col justify-center w-full'>
       <NavbarHomepage />
-      <div>Contact</div>
+      <FormContact />
     </main>
   )
 }
