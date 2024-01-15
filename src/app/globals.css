@@ -28,6 +28,3 @@ html::-webkit-scrollbar-thumb {
   height: 2em;
   background-color: #6844cc;
 }
-
-/* Agrega esta línea al archivo de estilos principal */
-@import '@fortawesome/fontawesome-svg-core/styles.css';
