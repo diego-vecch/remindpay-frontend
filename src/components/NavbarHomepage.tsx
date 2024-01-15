@@ -112,8 +112,8 @@ export const NavbarHomepage: React.FC = () => {
           }`}
         >
 
-          <Link href='/Signin'>
-            <ButtonMenu name='Signin' />
+          <Link href='/register'>
+            <ButtonMenu name='Register' />
           </Link>
 
           <Link href='/login'>
@@ -153,8 +153,8 @@ export const NavbarHomepage: React.FC = () => {
               </li>
 
               <li className='p-1'>
-                <Link href='/Signin'>
-                  <ButtonMenu name='Signin' />
+                <Link href='/register'>
+                  <ButtonMenu name='Register' />
                 </Link>
               </li>
               <li className='p-1'>
