@@ -12,29 +12,20 @@ const Register: React.FC = () => {
         <form action='' className='w-full max-w-md rounded-md flex flex-col gap-4 '>
           <div className='mb-4'>
             <input
-              type='text' id='email'
-              required
-              autoComplete='off'
-              className='w-full p-2 border rounded-md bg-purple-500 bg-opacity-5 placeholder-purple-700 border-purple-900  focus:outline-none focus:border-violet-600 focus:placeholder-violet-500 focus:bg-opacity-0 text-purple-800' placeholder='Email:'
-            />
-          </div>
-          <div className='mb-4'>
-            <input
-              type='text' id='Name'
-              required
-              autoComplete='off'
-              className='w-full p-2 border rounded-md bg-purple-500 bg-opacity-5 placeholder-purple-700 border-purple-900  focus:outline-none focus:border-violet-600 focus:placeholder-violet-500 focus:bg-opacity-0 text-purple-800' placeholder='Name:'
-            />
-          </div>
-          <div className='mb-4'>
-            <input
               type='text' id='userName'
               required
               autoComplete='off'
               className='w-full p-2 border rounded-md bg-purple-500 bg-opacity-5 placeholder-purple-700 border-purple-900  focus:outline-none focus:border-violet-600 focus:placeholder-violet-500 focus:bg-opacity-0 text-purple-800' placeholder='UserName:'
             />
           </div>
-
+          <div className='mb-4'>
+            <input
+              type='text' id='email'
+              required
+              autoComplete='off'
+              className='w-full p-2 border rounded-md bg-purple-500 bg-opacity-5 placeholder-purple-700 border-purple-900  focus:outline-none focus:border-violet-600 focus:placeholder-violet-500 focus:bg-opacity-0 text-purple-800' placeholder='Email:'
+            />
+          </div>
           <div className='mb-4'>
             <input
               type='password' id='password'
