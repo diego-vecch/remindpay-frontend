@@ -2,25 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --bg: #d7d3ff;
   background-color: var(--bg);
+  box-sizing: content-box;
 }
-
+html {
+  overflow-y: scroll;
+}
 main {
   background-color: var(--bg);
   /*   background: linear-gradient(to bottom,
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb)); */
-  background-image: url("../../public/bglightfull.webp");
+  background-image: url('../../public/bglightfull.webp');
   background-size: 100%;
 }
 
 html::-webkit-scrollbar {
   width: 8px;
   height: 1em;
-  background-color: #ceb4f4;
+  background-color: #0a0314;
 }
 
 html::-webkit-scrollbar-thumb {

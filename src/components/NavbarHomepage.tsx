@@ -51,8 +51,8 @@ export const NavbarHomepage: React.FC = () => {
   }
 
   return (
-    <nav className='sm:items-center text-end sm:flex-wrap font-primary flex justify-center  w-full max-w-[1100px] absolute top-0 m-auto z-10 right-0 left-0'>
-      <div className='flex justify-center items-start flex-grow md:flex md:items-center  text-purple-dark max-w-[1450px] w-full '>
+    <nav className='sm:items-center text-end sm:flex-wrap font-primary flex justify-center items-center w-full  absolute top-0 z-10 right-0 left-0'>
+      <div className='max-w-[1200px] flex justify-center items-start flex-grow md:flex md:items-center  text-purple-dark  w-full '>
         <div className='pt-4 ml-8 mb-2 w-full'>
           <Link href='/'>
             <LogoNavbar />
