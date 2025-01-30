@@ -3,7 +3,7 @@ export function ButtonForm({
   click
 }: {
   nameButton: string
-  click: (e: React.MouseEvent<HTMLButtonElement>) => void
+  click?: (e: React.MouseEvent<HTMLButtonElement>) => void
 }): JSX.Element {
   return (
     <button
